@@ -31,15 +31,16 @@ class TextProcessor:
         self.stemmer = PorterStemmer()
         self.lemmatizer = WordNetLemmatizer()
 
- def tokenize(self, text):
-    """Tokenize text"""
-    # Simple whitespace-based tokenization that doesn't require punkt_tab
-    text = text.translate(str.maketrans('', '', string.punctuation))
-    return text.lower().split()
-     
+    def tokenize(self, text):
+        """Tokenize text using simple split method"""
+        # Remove punctuation and convert to lowercase
+        text = text.translate(str.maketrans('', '', string.punctuation))
+        # Simple tokenization by splitting on whitespace
+        return text.lower().split()
+
     def remove_stopwords(self, tokens):
         """Remove stop words"""
-        return [token for token in tokens if token not in self.stop_words and token not in string.punctuation]
+        return [token for token in tokens if token not in self.stop_words]
 
     def stem(self, tokens):
         """Stem tokens"""
