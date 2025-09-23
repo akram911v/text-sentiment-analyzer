@@ -20,6 +20,7 @@ try:
     nltk.download('punkt')
     nltk.download('stopwords')
     nltk.download('wordnet')
+    nltk.download('punkt_tab')
 except:
     print("NLTK download skipped - using existing data")
 
