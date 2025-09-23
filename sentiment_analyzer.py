@@ -16,9 +16,12 @@ import string
 import pandas as pd
 
 # Download necessary NLTK resources
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('wordnet')
+try:
+    nltk.download('punkt')
+    nltk.download('stopwords')
+    nltk.download('wordnet')
+except:
+    print("NLTK download skipped - using existing data")
 
 class TextProcessor:
     """Class for text processing"""
